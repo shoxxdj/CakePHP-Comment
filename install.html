@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Installation | CakePHP Comment Plugin</title>
+        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans|Kreon' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://jonathan-boyer.fr/css/style.css" />
+  </head>
+
+
+  <body>
+
+  	<div id="root">
+      <header class="header">
+        <a href="http://jonathan-boyer.fr/" class="logo">
+          <img src="http://jonathan-boyer.fr/img/logo.png" alt="" />        </a>
+        <nav>
+          <a href="http://jonathan-boyer.fr/" class="">Accueil</a>
+          <a href="http://jonathan-boyer.fr/portfolio" class="">Portfolio</a>
+          <a href="http://jonathan-boyer.fr/projets" class="active">Projets</a>
+          <a href="http://jonathan-boyer.fr/competences" class="">Compétences</a>
+          <a href="http://jonathan-boyer.fr/culture" class="">Culture</a>
+          <a href="http://jonathan-boyer.fr/contact" class="">Contact</a>
+        </nav>
+      </header>
+
+      <h1>Plugin Comment</h1>
+      <span class="subtitle">Pour CakePHP</span>
+
+      <nav class="secondary">
+        <a href="index.html">Présentation</a>
+        <a href="install.html" class="active">Installation</a>
+        <a href="usage.html">Utilisation</a>
+        <a href="config.html">Configuration</a>
+      </nav>
+
+      <p>La première chose à faire est de copier le plugin Comment dans le dossier Plugin de votre application. Pour celà vous pouver télécharger le .zip ou cloner directement le dépôt</p>
+
+      <pre>git clone git@github.com:Grafikart/CakePHP-Comment.git Comment</pre>
+
+      <p>Ensuite il vous faut charger le plugin, pour cela dans votre fichier bootstrap.php vous pouvez décommenter la ligne</p>
+
+      <pre>CakePlugin::loadAll(array(
+        'Comment' => array('bootstrap' => true)
+      ));</pre>
+
+      <p>Voila ! le plugin est bien chargé vous pouvez maintenant importer la base de donnée qui va permettre de gérer les différents médias. Pour cela il faut utiliser la console de CakePHP et utiliser la commande</p>
+
+      <pre>cake schema create --plugin=Comment</pre>
+
+      <p>Et c'est tout vous êtes prêt à utiliser le plugin !</p>
+
+      <p>&nbsp;</p>
+
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+      <script type="text/javascript" src="http://jonathan-boyer.fr/js/min.js"></script>
+
+</footer>
+</body>
+</html>

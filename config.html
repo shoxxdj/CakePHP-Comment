@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Configuration | CakePHP Comment Plugin</title>
+        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans|Kreon' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://jonathan-boyer.fr/css/style.css" />
+  </head>
+
+
+  <body>
+
+  	<div id="root">
+      <header class="header">
+        <a href="http://jonathan-boyer.fr/" class="logo">
+          <img src="http://jonathan-boyer.fr/img/logo.png" alt="" />        </a>
+        <nav>
+          <a href="http://jonathan-boyer.fr/" class="">Accueil</a>
+          <a href="http://jonathan-boyer.fr/portfolio" class="">Portfolio</a>
+          <a href="http://jonathan-boyer.fr/projets" class="active">Projets</a>
+          <a href="http://jonathan-boyer.fr/competences" class="">Compétences</a>
+          <a href="http://jonathan-boyer.fr/culture" class="">Culture</a>
+          <a href="http://jonathan-boyer.fr/contact" class="">Contact</a>
+        </nav>
+      </header>
+
+      <h1>Plugin Comment</h1>
+      <span class="subtitle">Pour CakePHP</span>
+
+      <nav class="secondary">
+        <a href="index.html">Présentation</a>
+        <a href="install.html">Installation</a>
+        <a href="usage.html">Utilisation</a>
+        <a href="config.html" class="active">Configuration</a>
+      </nav>
+
+      <h2>Bootstrap</h2>
+
+      <p>Le plugin peut être configurer en modifiant une ou plusieurs valeur dans Configure::read('Plugin.Comment') : </p>
+
+<pre>array(
+  // Contient les infos à utiliser si un utilisateur est loggué
+  'user'   => array(
+    'model' => 'User',                // Model contenant les utilisateurs
+    'username' => 'username',         // Champ à utiliser comme pseudo
+    'mail'     => 'mail',             // Champ à utiliser comme mail
+  ),
+  'order'  => 'Comment.created ASC',  // Ordre d'organisations de commentaires
+  'subcomments' => true               // On autorise les réponses à un commentaire
+
+  // Optionnel
+  'akismet'=> array('site' => SITE,'key' => KEY),  // Si vous souhaiter utiliser akismet il faut entrer l'url de votre site ainsi que votre clef
+
+);</pre>
+
+      <p>&nbsp;</p>
+
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+      <script type="text/javascript" src="http://jonathan-boyer.fr/js/min.js"></script>
+
+</footer>
+</body>
+</html>

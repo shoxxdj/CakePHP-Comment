@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Utilisation | CakePHP Comment Plugin</title>
+        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans|Kreon' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://jonathan-boyer.fr/css/style.css" />
+  </head>
+
+
+  <body>
+
+  	<div id="root">
+      <header class="header">
+        <a href="http://jonathan-boyer.fr/" class="logo">
+          <img src="http://jonathan-boyer.fr/img/logo.png" alt="" />        </a>
+        <nav>
+          <a href="http://jonathan-boyer.fr/" class="">Accueil</a>
+          <a href="http://jonathan-boyer.fr/portfolio" class="">Portfolio</a>
+          <a href="http://jonathan-boyer.fr/projets" class="active">Projets</a>
+          <a href="http://jonathan-boyer.fr/competences" class="">Compétences</a>
+          <a href="http://jonathan-boyer.fr/culture" class="">Culture</a>
+          <a href="http://jonathan-boyer.fr/contact" class="">Contact</a>
+        </nav>
+      </header>
+
+      <h1>Plugin Comment</h1>
+      <span class="subtitle">Pour CakePHP</span>
+
+      <nav class="secondary">
+        <a href="index.html">Présentation</a>
+        <a href="install.html">Installation</a>
+        <a href="usage.html" class="active">Utilisation</a>
+        <a href="config.html">Configuration</a>
+      </nav>
+
+      <h2>Comment.Commentable behaviour</h2>
+
+      <p>Pour utiliser le plugin Comment vous devez d'abord charger le Behaviour sur vos models. Par exemple si pour mes article je veux pouvoir avec des commentaires liées : </p>
+
+      <pre>&lt;?php
+class Post extends AppModel{
+
+  public $actsAs = array(
+    'Containable',
+    'Comment.Commentable'
+  );
+}</pre>
+
+      <p>Il est conseillé d'utiliser le Behaviour containable afin d'avoir un contrôle total sur les liaisons qui seront faites à l'avenir (pour des raisons de performances essentiellement.</p>
+
+      <p>Ce behaviour rajoute 1 liaison à votre model : </p>
+
+      <ul>
+        <li><strong>hasMany Comment</strong>, permet de récupérer touts les commentaires liées à un contenu.</li>
+      </ul>
+
+      <p>Une fois ce behaviour associé vous aurez la possibilité de récupérer les commentaires associés à un article avec la méthode findComments($options = array()). (cette méthode prend les mêmes paramètre que la méthode find())</p>
+
+      <pre>$this->Post->id = 3;
+$comments = $this->Post->findComments();   // On a tous les commentaire de l'article 3</pre>
+
+      <p>Si vous souhaitez garder une trace du nombre de commentaire pour vos contenus il faut créer un champs comment_count dans la table correspondant à votre model</p>
+
+      <h2>Comment.Comment Helper</h2>
+
+      <p>Maintenant que tout est en place il faut pouvoir ajouter un commentaire, rien de plus simple il vous suffit d'utiliser le helper Comment</p>
+
+      <pre>&lt;?= $this->Comment->form($MODEL, $ID); ?></pre>
+
+      <p>Le formulaire possède un champs parent_id, que vous pouvez modifier en javascript (à vous de développer cette interface) et qui permet de créer un système de réponse)</p>
+
+
+      <p>&nbsp;</p>
+
+
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+      <script type="text/javascript" src="http://jonathan-boyer.fr/js/min.js"></script>
+
+</footer>
+</body>
+</html>
